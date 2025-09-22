@@ -32,7 +32,7 @@ jobs:
       - name: Find the modules
         id: find_modules
         run: |
-          echo "MODULES=$(find modules/ -maxdepth 1 -type d -name 'terraform-*' | paste -sd,)" >> "$GITHUB_ENV"
+          echo "MODULES=$(find modules/ -mindepth 1 -maxdepth 1 -type d | paste -sd,)" >> "$GITHUB_ENV"
 
       - name: Print list of modules
         run: |
