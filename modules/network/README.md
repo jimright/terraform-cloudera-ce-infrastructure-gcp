@@ -22,13 +22,16 @@ The sample `terraform.tfvars.sample` describes the required inputs for the examp
 
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | > 1.3.0 |
+| <a name="requirement_google"></a> [google](#requirement\_google) | >= 6.12 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | n/a |
+| <a name="provider_google"></a> [google](#provider\_google) | >= 6.12 |
 
 ## Modules
 
@@ -51,12 +54,9 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_prefix"></a> [prefix](#input\_prefix) | Deployment prefix used for naming all cloud-provider assets created by this module. | `string` | n/a | yes |
-| <a name="input_project_id"></a> [project\_id](#input\_project\_id) | The GCP project ID where resources will be deployed. | `string` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | The GCP region where resources will be deployed. | `string` | n/a | yes |
 | <a name="input_vpc_exists"></a> [vpc\_exists](#input\_vpc\_exists) | Use existing GCP VPC network. | `bool` | n/a | yes |
 | <a name="input_vpc_name"></a> [vpc\_name](#input\_vpc\_name) | The name of the GCP VPC network into which subnets and other network resources will be deployed. | `string` | n/a | yes |
-| <a name="input_zones"></a> [zones](#input\_zones) | Zones in GCP region where resources will be deployed. | `list(string)` | n/a | yes |
-| <a name="input_asset_tags"></a> [asset\_tags](#input\_asset\_tags) | Map of labels applied to all cloud-provider assets created by this module. These are GCP resource labels. | `map(string)` | `{}` | no |
 | <a name="input_base_cidr_block"></a> [base\_cidr\_block](#input\_base\_cidr\_block) | The base CIDR block (e.g., '10.50.0.0/16') from which default public and private subnet CIDRs will be derived. This variable is required if 'public\_subnets' or 'private\_subnets' are not explicitly provided. | `string` | `"10.10.0.0/16"` | no |
 | <a name="input_private_subnets"></a> [private\_subnets](#input\_private\_subnets) | A list of objects defining private subnets. Each object requires 'name', 'cidr', and 'labels' (a map of strings). If this list is empty, a single default private subnet will be created using 'base\_cidr\_block'. | <pre>list(object({<br/>    name   = string<br/>    cidr   = string<br/>    labels = map(string) # Renamed from 'tags' to 'labels' for clarity and consistency with GCP resource labels<br/>  }))</pre> | `[]` | no |
 | <a name="input_public_subnets"></a> [public\_subnets](#input\_public\_subnets) | A list of objects defining public subnets. Each object requires 'name', 'cidr', and 'labels' (a map of strings). If this list is empty, a single default public subnet will be created using 'base\_cidr\_block'. | <pre>list(object({<br/>    name   = string<br/>    cidr   = string<br/>    labels = map(string) # Renamed from 'tags' to 'labels' for clarity and consistency with GCP resource labels<br/>  }))</pre> | `[]` | no |
@@ -72,7 +72,7 @@ No modules.
 | <a name="output_region"></a> [region](#output\_region) | The GCP region used for deployment, as provided in the input variables. |
 | <a name="output_router_name"></a> [router\_name](#output\_router\_name) | The name of the created Cloud Router resource. |
 | <a name="output_vpc_name"></a> [vpc\_name](#output\_vpc\_name) | The GCP VPC network name used for deployment, as provided in the input variables. |
-| <a name="output_vpc_private_cidr_block"></a> [vpc\_private\_cidr\_block](#output\_vpc\_private\_cidr\_block) | n/a |
-| <a name="output_vpc_public_cidr_block"></a> [vpc\_public\_cidr\_block](#output\_vpc\_public\_cidr\_block) | n/a |
+| <a name="output_vpc_private_cidr_block"></a> [vpc\_private\_cidr\_block](#output\_vpc\_private\_cidr\_block) | Value of the first created private subnet's CIDR block. |
+| <a name="output_vpc_public_cidr_block"></a> [vpc\_public\_cidr\_block](#output\_vpc\_public\_cidr\_block) | Value of the first created public subnet's CIDR block. |
 | <a name="output_vpc_self_link"></a> [vpc\_self\_link](#output\_vpc\_self\_link) | Self-link of the VPC network fetched by the module. |
 <!-- END_TF_DOCS -->

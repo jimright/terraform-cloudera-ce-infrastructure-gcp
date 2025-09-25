@@ -59,10 +59,14 @@ output "created_private_subnets" {
 
 output "vpc_private_cidr_block" {
   value = google_compute_subnetwork.pvc_base_private[0].ip_cidr_range
+
+  description = "Value of the first created private subnet's CIDR block."
 }
 
 output "vpc_public_cidr_block" {
   value = google_compute_subnetwork.pvc_base_public[0].ip_cidr_range
+
+  description = "Value of the first created public subnet's CIDR block."
 }
 
 output "router_name" {

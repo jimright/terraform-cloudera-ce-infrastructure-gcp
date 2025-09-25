@@ -12,39 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# File: tf_cluster_gcp/modules/network/variables.tf
-
 # ------- Required Variables -------
-
-variable "asset_tags" {
-  type        = map(string)
-  default     = {}
-  description = "Map of labels applied to all cloud-provider assets created by this module. These are GCP resource labels."
-}
 
 variable "prefix" {
   type        = string
   description = "Deployment prefix used for naming all cloud-provider assets created by this module."
 }
 
-variable "project_id" {
-  type        = string
-  description = "The GCP project ID where resources will be deployed."
-}
-
 variable "region" {
   type        = string
   description = "The GCP region where resources will be deployed."
-}
-
-variable "zones" {
-  type        = list(string)
-  description = "Zones in GCP region where resources will be deployed."
-
-  validation {
-    condition     = length(var.zones) != 0
-    error_message = "No zones returned! Invalid GCP Region: ${var.region}"
-  }
 }
 
 variable "vpc_name" {
@@ -68,6 +45,11 @@ variable "base_cidr_block" {
   }
 }
 
+# variable "asset_tags" {
+#   type        = map(string)
+#   default     = {}
+#   description = "Map of labels applied to all cloud-provider assets created by this module. These are GCP resource labels."
+# }
 # ------- Network Resources Configuration Variables -------
 
 variable "public_subnets" {

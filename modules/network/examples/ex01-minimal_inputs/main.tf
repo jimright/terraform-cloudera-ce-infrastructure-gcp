@@ -47,9 +47,7 @@ locals {
 module "ex01_network" {
   source = "../.."
 
-  project_id      = var.project_id
   region          = var.region
-  zones           = local.zones
   vpc_name        = "${var.prefix}-pvc-base"
   vpc_exists      = false
   prefix          = var.prefix
@@ -57,7 +55,5 @@ module "ex01_network" {
 
   public_subnets  = var.public_subnets_config
   private_subnets = var.private_subnets_config
-
-  asset_tags = local.asset_tags
 
 }

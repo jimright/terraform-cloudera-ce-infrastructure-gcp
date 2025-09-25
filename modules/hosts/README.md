@@ -22,13 +22,16 @@ The sample `terraform.tfvars.sample` describes the required inputs for the examp
 
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | > 1.3.0 |
+| <a name="requirement_google"></a> [google](#requirement\_google) | >= 6.12 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | n/a |
+| <a name="provider_google"></a> [google](#provider\_google) | >= 6.12 |
 
 ## Modules
 
@@ -48,7 +51,6 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_name"></a> [name](#input\_name) | Instance base name. If 'quantity' is 0, this is the exact name of the single instance. If 'quantity' > 0, name will be <name>-NN. | `string` | n/a | yes |
 | <a name="input_project_id"></a> [project\_id](#input\_project\_id) | GCP project ID where instances will be created. | `string` | n/a | yes |
-| <a name="input_region"></a> [region](#input\_region) | GCP region (e.g., us-central1) for the instances (used for regional resources if any, zone is primary for instances). | `string` | n/a | yes |
 | <a name="input_ssh_public_key"></a> [ssh\_public\_key](#input\_ssh\_public\_key) | The contents of the SSH public key to be added to the instance metadata for SSH access. | `string` | n/a | yes |
 | <a name="input_subnet_ids"></a> [subnet\_ids](#input\_subnet\_ids) | List of subnet self-links or names to assign instances to. Instances will be distributed across these subnets. Must not be empty if instances are created. | `list(string)` | n/a | yes |
 | <a name="input_zones"></a> [zones](#input\_zones) | GCP zone (e.g., us-central1-a) where instances will be created. | `list(string)` | n/a | yes |

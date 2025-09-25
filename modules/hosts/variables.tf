@@ -20,11 +20,6 @@ variable "project_id" {
   description = "GCP project ID where instances will be created."
 }
 
-variable "region" {
-  type        = string
-  description = "GCP region (e.g., us-central1) for the instances (used for regional resources if any, zone is primary for instances)."
-}
-
 variable "zones" {
   type        = list(string)
   description = "GCP zone (e.g., us-central1-a) where instances will be created."
