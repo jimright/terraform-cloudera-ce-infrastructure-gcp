@@ -12,9 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# <ENTER_REQUIRED_INPUT_VALUES>
 
 # ------- Global Settings -------
-name_prefix = "<ENTER_VALUE>"
+prefix = "<ENTER_VALUE>"
 
 # ------- Cloud Settings -------
+project_id = "<ENTER_VALUE>"
+
+region = "<ENTER_VALUE>"
+

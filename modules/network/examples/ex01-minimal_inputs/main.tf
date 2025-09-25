@@ -44,7 +44,7 @@ locals {
 
 }
 
-module "ex01_hosts" {
+module "ex01_network" {
   source = "../.."
 
   project_id      = var.project_id

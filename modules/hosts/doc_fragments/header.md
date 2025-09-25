@@ -1,13 +1,15 @@
-# Terraform Module for Hosts on ENTER_INFRA_PROVIDER
+# Terraform Module for Hosts on GCP
 
-> [!IMPORTANT]  
-> This readme is automation generated using the [`terraform-docs`](https://terraform-docs.io/) command with the static contenta taken from [doc_fragments/header.md](doc_fragments/header.md)
-
-The `hosts` module contains resource files to provision and manage <ENTER_INFRA_PROVIDER> instances with flexible configuration options for compute resources, storage volumes, and networking. This module is designed for Cloudera on premise infrastructure deployments on <ENTER_INFRA_PROVIDER>.
+The `hosts` module contains resource files to provision and manage GCP compute instances with flexible configuration options for compute resources, storage volumes, and networking. This module is designed for Cloudera on premise infrastructure deployments on GCP IaaS.
 
 ## Key Features
 
-<ENTER_KEY_FEATURES>
+* **Flexible Instance Deployment**: Create single instances or multiple numbered instances with customizable naming patterns
+* **Multi-Zone Distribution**: Automatically distribute instances across multiple GCP zones for high availability
+* **Public and Private IP Management**: Support for ephemeral public IPs, static external IP addresses, or private-only configurations
+* **Custom Storage Volumes**: Attach additional persistent disks with configurable size, type, and mount points
+* **SSH Key Management**: Automated SSH public key injection for secure instance access
+* **Network Tag Support**: Apply network tags for firewall rule targeting and security group management
 
 ## Usage
 
